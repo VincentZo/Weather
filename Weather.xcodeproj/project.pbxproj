@@ -12,6 +12,9 @@
 		BF486C801D9F698400B8B389 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF486C7E1D9F698400B8B389 /* Main.storyboard */; };
 		BF486C821D9F698400B8B389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF486C811D9F698400B8B389 /* Assets.xcassets */; };
 		BF486C851D9F698400B8B389 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF486C831D9F698400B8B389 /* LaunchScreen.storyboard */; };
+		BF486C901D9FB02200B8B389 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF486C8F1D9FB02200B8B389 /* MainController.swift */; };
+		BF486C921D9FB03500B8B389 /* LeftTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF486C911D9FB03500B8B389 /* LeftTableViewController.swift */; };
+		BF486C941D9FB03F00B8B389 /* RightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF486C931D9FB03F00B8B389 /* RightTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		BF486C811D9F698400B8B389 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF486C841D9F698400B8B389 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF486C861D9F698400B8B389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF486C8F1D9FB02200B8B389 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		BF486C911D9FB03500B8B389 /* LeftTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTableViewController.swift; sourceTree = "<group>"; };
+		BF486C931D9FB03F00B8B389 /* RightTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,41 @@
 		BF486C791D9F698400B8B389 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				BF486C7A1D9F698400B8B389 /* AppDelegate.swift */,
-				BF486C7C1D9F698400B8B389 /* ViewController.swift */,
-				BF486C7E1D9F698400B8B389 /* Main.storyboard */,
+				BF486C8C1D9F734100B8B389 /* controller */,
+				BF486C8D1D9F734C00B8B389 /* storyboard */,
+				BF486C8E1D9F735F00B8B389 /* delegate */,
 				BF486C811D9F698400B8B389 /* Assets.xcassets */,
-				BF486C831D9F698400B8B389 /* LaunchScreen.storyboard */,
 				BF486C861D9F698400B8B389 /* Info.plist */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		BF486C8C1D9F734100B8B389 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BF486C7C1D9F698400B8B389 /* ViewController.swift */,
+				BF486C8F1D9FB02200B8B389 /* MainController.swift */,
+				BF486C911D9FB03500B8B389 /* LeftTableViewController.swift */,
+				BF486C931D9FB03F00B8B389 /* RightTableViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		BF486C8D1D9F734C00B8B389 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				BF486C7E1D9F698400B8B389 /* Main.storyboard */,
+				BF486C831D9F698400B8B389 /* LaunchScreen.storyboard */,
+			);
+			name = storyboard;
+			sourceTree = "<group>";
+		};
+		BF486C8E1D9F735F00B8B389 /* delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BF486C7A1D9F698400B8B389 /* AppDelegate.swift */,
+			);
+			name = delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +170,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF486C7D1D9F698400B8B389 /* ViewController.swift in Sources */,
+				BF486C901D9FB02200B8B389 /* MainController.swift in Sources */,
+				BF486C921D9FB03500B8B389 /* LeftTableViewController.swift in Sources */,
+				BF486C941D9FB03F00B8B389 /* RightTableViewController.swift in Sources */,
 				BF486C7B1D9F698400B8B389 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

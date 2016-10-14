@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var rightTableViewController : RightTableViewController?
     
     // 滑动缓冲
-    let speed_buff:CGFloat = 0.5
+    let speed_buff:CGFloat = 0.6
     
     // 保存滑动的真实距离
     var pan_scope:CGFloat = 0
@@ -25,15 +25,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.initSubviews()
         self.configSubviews()
+        self.configNotification()
     }
     
     // 初始化属性
     func initSubviews(){
         // 将 mainController 嵌入到 UINavigationController 中,设置为根控制器
         let rootController = MainController()
+        rootController.rootController = self
         self.mainController = UINavigationController.init(rootViewController: rootController)
         self.leftTableViewController = LeftTableViewController()
         self.rightTableViewController = RightTableViewController()
+        self.rightTableViewController?.rootViewController = self
     }
     
     // 配置子视图
@@ -49,11 +52,11 @@ class ViewController: UIViewController {
         let pan = UIPanGestureRecognizer.init(target: self, action: #selector(doPan))
         self.mainController?.view.isUserInteractionEnabled = true
         self.mainController?.view.addGestureRecognizer(pan)
-        
+
     }
     
     // MARK: 实现滑动主界面的方法
-    func doPan(sender:UIPanGestureRecognizer){
+    func doPan(_ sender:UIPanGestureRecognizer){
        // print("滑动屏幕...")
         // 直接获取 view 中点击的某一点的坐标
         let point = sender.translation(in: sender.view)
@@ -109,7 +112,26 @@ class ViewController: UIViewController {
             self.mainController?.view.center = CGPoint.init(x: CGFloat(60) - UIScreen.main.bounds.size.width * CGFloat(0.5), y: UIScreen.main.bounds.size.height/2)
         }
     }
+    
+    // MARK: 注册通知获取城市及自动定位信息
+    func configNotification(){
+        // 自动定位
+        NotificationCenter.default.addObserver(self, selector: #selector(showMainView), name: NSNotification.Name.init(rawValue: ContentsInfo.autoLocationNotificationIndentifier), object: nil)
+        // 获取城市
+        NotificationCenter.default.addObserver(self, selector: #selector(showMainView), name: NSNotification.Name.init(rawValue: ContentsInfo.selectCityCellNotificationIndentifier), object: nil)
+    }
+    
+    func showMainView(sender: Notification){
+        self.showMain()
+    }
 
+    
+    // MARK: 新特性 iOS10 隐藏状态栏
+    //重写prefersStatusBarHidden计算属性,修改其他状态栏样式也可以通过此种方式
+    // 不用在 info.plist 文件中设置:Status bar is initially hidden
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
 }
 
 

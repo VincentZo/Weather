@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="rightCell" rowHeight="100" id="KGk-i7-Jjw" customClass="RightCell" customModule="Weather" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="352" height="89"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete_hover" translatesAutoresizingMaskIntoConstraints="NO" id="vvB-tE-M6C">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="18" id="jKo-QA-wnn"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MyL-XC-dDg">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="OjV-ZV-62u"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoW-st-HwJ">
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="Uz3-zr-EHS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.15686274509803921" green="0.14509803921568626" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="MyL-XC-dDg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="22" id="9pq-DV-Gdq"/>
+                    <constraint firstItem="MyL-XC-dDg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="90" id="IC0-fx-I7l"/>
+                    <constraint firstItem="MyL-XC-dDg" firstAttribute="bottom" secondItem="vvB-tE-M6C" secondAttribute="bottom" constant="-4" id="R8F-T5-JmZ"/>
+                    <constraint firstItem="MyL-XC-dDg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-2" id="Roe-rI-5y3"/>
+                    <constraint firstItem="MyL-XC-dDg" firstAttribute="centerY" secondItem="OoW-st-HwJ" secondAttribute="centerY" id="Xzo-pc-ePc"/>
+                    <constraint firstItem="MyL-XC-dDg" firstAttribute="top" secondItem="vvB-tE-M6C" secondAttribute="top" id="Z9S-cU-Okt"/>
+                    <constraint firstItem="OoW-st-HwJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="22" id="pXi-co-cFh"/>
+                    <constraint firstItem="OoW-st-HwJ" firstAttribute="leading" secondItem="MyL-XC-dDg" secondAttribute="trailing" constant="14" id="tz0-Sy-hMo"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vvB-tE-M6C" secondAttribute="trailing" constant="25" id="vCf-Ao-LGD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cityLabel" destination="OoW-st-HwJ" id="CZr-2p-AIP"/>
+                <outlet property="deleteImageView" destination="vvB-tE-M6C" id="KXS-zW-4Uq"/>
+                <outlet property="locationImageView" destination="MyL-XC-dDg" id="0l4-Oo-w4N"/>
+            </connections>
+            <point key="canvasLocation" x="-58" y="42"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="delete_hover" width="14" height="18"/>
+    </resources>
+</document>
